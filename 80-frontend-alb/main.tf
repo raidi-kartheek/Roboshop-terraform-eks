@@ -34,6 +34,8 @@ resource "aws_lb_listener" "ingress_alb" {
   }
 }
 
+
+
 resource "aws_route53_record" "ingress_alb" {
   zone_id = var.zone_id
   name    = "*.${var.domain_name}" # *.daws86s.fun
@@ -47,6 +49,8 @@ resource "aws_route53_record" "ingress_alb" {
     evaluate_target_health = true
   }
 }
+
+
 
 resource "aws_lb_target_group" "frontend" {
   name     = "${local.common_name_suffix}-frontend"
@@ -68,6 +72,8 @@ resource "aws_lb_target_group" "frontend" {
   }
 }
 
+
+
 resource "aws_lb_listener_rule" "frontend" {
   listener_arn = aws_lb_listener.ingress_alb.arn
   priority     = 10
@@ -83,3 +89,4 @@ resource "aws_lb_listener_rule" "frontend" {
     }
   }
 }
+

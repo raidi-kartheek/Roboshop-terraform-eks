@@ -7,6 +7,7 @@ resource "aws_security_group_rule" "mongodb_bastion" {
   to_port           = 22
 }
 
+
 # resource "aws_security_group_rule" "mongodb_catalogue" {
 #   type              = "ingress"
 #   security_group_id = local.mongodb_sg_id
@@ -15,6 +16,7 @@ resource "aws_security_group_rule" "mongodb_bastion" {
 #   protocol          = "tcp"
 #   to_port           = 27017
 # }
+
 
 # resource "aws_security_group_rule" "mongodb_user" {
 #   type              = "ingress"
@@ -25,6 +27,8 @@ resource "aws_security_group_rule" "mongodb_bastion" {
 #   to_port           = 27017
 # }
 
+
+
 # Refis accepting connections from bastion on port 22
 resource "aws_security_group_rule" "redis_bastion" {
   type              = "ingress"
@@ -34,6 +38,9 @@ resource "aws_security_group_rule" "redis_bastion" {
   protocol          = "tcp"
   to_port           = 22
 }
+
+
+
 
 # resource "aws_security_group_rule" "redis_user" {
 #   type              = "ingress"
@@ -393,6 +400,8 @@ resource "aws_security_group_rule" "eks_control_plane_bastion" {
   to_port           = 443
 }
 
+
+
 resource "aws_security_group_rule" "eks_node_bastion" {
   type              = "ingress"
   security_group_id = local.eks_node_sg_id
@@ -401,6 +410,8 @@ resource "aws_security_group_rule" "eks_node_bastion" {
   protocol          = "tcp"
   to_port           = 22
 }
+
+
 
 # EKS nodes can accept all kind of traffic from EKS control plane
 resource "aws_security_group_rule" "eks_node_eks_control_plane" {
@@ -420,6 +431,7 @@ resource "aws_security_group_rule" "eks_control_plane_eks_node" {
   protocol          = "-1"
   to_port           = 0
 }
+
 
 # Mandatory for pod to pod communication. because pods can be in any node in VPC CIDR
 resource "aws_security_group_rule" "eks_node_vpc" {
