@@ -1,9 +1,9 @@
 #!/bin/bash
 
-# User terraform repo
-USER_REPO="/home/devops/project-terraform"
 
-# List of module repositories
+USER_REPO="/home/devops/Roboshop-terraform-eks"
+
+
 declare -A modules
 modules=(
   ["00-vpc"]="/home/devops/modules/terraform-aws-00-vpc"
@@ -20,12 +20,11 @@ for module in "${!modules[@]}"
 do
     MODULE_PATH=${modules[$module]}
 
-    # Get latest version from git tag
+    
     latest_version=$(git -C $MODULE_PATH describe --tags $(git -C $MODULE_PATH rev-list --tags --max-count=1))
 
     echo "Latest version for $module : $latest_version"
 
-    # Find terraform files using that module
     files=$(grep -rl "terraform-aws-$module" $USER_REPO)
 
     for file in $files
