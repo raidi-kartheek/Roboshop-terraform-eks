@@ -22,6 +22,11 @@ pipeline {
     //     password(name: 'PASSWORD', defaultValue: 'SECRET', description: 'Enter a password')
     // }
     // This is build section
+
+//     module "vpc" {
+//   source = "git::https://github.com/org/terraform-aws-vpc.git"
+//   version = "1.0.0"
+// }
     stages {
         stage('Init') {
             steps {
