@@ -10,7 +10,7 @@ modules=(
   ["90-eks"]="/home/devops/modules/terraform-aws-90-eks"
   ["10-sg"]="/home/devops/modules/terraform-aws-sg"
   ["20-sg_rules"]="/home/devops/modules/terraform-aws-20-sg_rules"
-  ["40-databases"]="/home/devops/modules/terraform-aws-40-databases"
+#   ["40-databases"]="/home/devops/modules/terraform-aws-40-databases"
   ["70-acm"]="/home/devops/modules/terraform-aws-70-acm"
   ["80-frontend-alb"]="/home/devops/modules/terraform-aws-80-frontend-alb"
 
