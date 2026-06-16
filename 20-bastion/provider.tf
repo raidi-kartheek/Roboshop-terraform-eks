@@ -7,7 +7,7 @@ terraform {
   }
   
   backend "s3" {
-    bucket = "aws-remote-state-dev"
+    bucket = "raidi-state-dev"
     key    = "roboshop-bastion"
     region = "us-east-1"
     dynamodb_table = "aws-locking"

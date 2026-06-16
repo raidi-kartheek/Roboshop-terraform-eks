@@ -41,7 +41,7 @@ else
   TARGET_NG_VERSION="blue"
 fi
 
-VALIDATE(){ # functions receive inputs through args just like shell script args
+VALIDATE(){ 
     if [ $1 -ne 0 ]; then
         echo -e "$2 ... $R FAILURE $N" | tee -a $LOG_FILE
         exit 1
