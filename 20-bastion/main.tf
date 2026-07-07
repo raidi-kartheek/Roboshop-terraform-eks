@@ -15,7 +15,7 @@ resource "aws_instance" "bastion" {
     tags = merge (
         local.common_tags,
         {
-            Name = "${var.project_name}-${var.environment}-bastion"
+            Name = "${var.project}-${var.environment}-bastion"
         }
     )
 }

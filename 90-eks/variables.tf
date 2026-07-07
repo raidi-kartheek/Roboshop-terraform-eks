@@ -1,25 +1,27 @@
-variable "project_name" {
-    default = "roboshop"
+variable "project" {
+  default = "roboshop"
 }
 
 variable "environment" {
-    default = "dev"
+  default = "dev"
 }
 
-variable "sg_names" {
-    default = [
-        # databases
-        "mongodb", "redis", "mysql", "rabbitmq",
-        # backend
-        "catalogue", "user", "cart", "shipping", "payment",
-        # frontend
-        "frontend",
-        # bastion
-        "bastion",
-        # frontend load balancer
-        "frontend_alb",
-        # Backend ALB
-        "backend_alb",
-        "open_vpn"
-    ]
+variable "eks_version" {
+  default = "1.34"
+}
+
+variable "enable_blue" {
+  default = true
+}
+
+variable "enable_green" {
+  default = false
+}
+
+variable "eks_nodegroup_blue_version" {
+  default = ""
+}
+
+variable "eks_nodegroup_green_version" {
+  default = ""
 }

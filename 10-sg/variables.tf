@@ -1,9 +1,14 @@
-variable "project_name" {
+variable "project" {
     default = "roboshop"
 }
 
 variable "environment" {
     default = "dev"
+}
+
+variable "sg_description" {
+  description = "Security Group description"
+  type        = string
 }
 
 variable "sg_names" {

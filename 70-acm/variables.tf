@@ -1,4 +1,4 @@
-variable "project_name" {
+variable "project" {
     default = "roboshop"
 }
 
@@ -7,9 +7,9 @@ variable "environment" {
 }
 
 variable "domain_name" {
-    default = "raidi.fun"
+    default = "raidi.shop"
 }
 
 variable "zone_id" {
-    default = "Z0948150OFPSYTNVYZOY"
+    default = "Z04182971BUBWKCCJ0S5U"
 }

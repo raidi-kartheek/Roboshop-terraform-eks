@@ -8,9 +8,10 @@ terraform {
   
   backend "s3" {
     bucket = "raidi-state-dev"
-    key    = "roboshop-bastion"
+    key    = "roboshop-dev-sg-rules"
     region = "us-east-1"
-    dynamodb_table = "aws-locking"
+    use_lockfile = true
+    encrypt = true
   }
 }
 

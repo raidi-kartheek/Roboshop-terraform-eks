@@ -12,11 +12,11 @@
 
 module "sg" {
   count = length(var.sg_names)
-  source = "git::https://github.com/raidi-kartheek/terraform-aws-sg.git?ref=main"
-  project_name = var.project_name
+  source = "git::https://github.com/raidi-kartheek/terraform-aws-security-group.git?ref=main"
+  project = var.project
   environment = var.environment
-  sg_name = var.sg_names[count.index]
-  sg_description = "Created for ${var.sg_names[count.index]}"
+  sg_name = replace(var.sg_names[count.index], "_", "-")
+  # sg_description = "Created for ${var.sg_names[count.index]}"
   vpc_id =  local.vpc_id
 }
 
