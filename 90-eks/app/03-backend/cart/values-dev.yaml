@@ -4,5 +4,5 @@ configMap:
   CATALOGUE_PORT: "8080"
 deployment:
   replicas: "1"
-  imageName: "Raidi/cart"
+  imageName: "raidi/cart"
   imageVersion: "1.4.0"
