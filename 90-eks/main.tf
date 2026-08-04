@@ -26,20 +26,20 @@ module "eks" {
       }
     }
 
-    green = {
-      create             = var.enable_green
-      kubernetes_version = var.eks_nodegroup_green_version
-      instance_types     = ["c3.large", "c4.large", "c5.large", "c5d.large", "c5n.large", "c5a.large"]
-      capacity_type      = "SPOT"
-      min_size           = 2
-      max_size           = 10
-      desired_size       = 2
-      labels             = { nodegroup = "green" }
-      iam_role_additional_policies = {
-        amazonEBS = "arn:aws:iam::aws:policy/service-role/AmazonEBSCSIDriverPolicy"
-        amazonEFS = "arn:aws:iam::aws:policy/service-role/AmazonEFSCSIDriverPolicy"
-      }
-    }
+    # green = {
+    #   create             = var.enable_green
+    #   kubernetes_version = var.eks_nodegroup_green_version
+    #   instance_types     = ["c3.large", "c4.large", "c5.large", "c5d.large", "c5n.large", "c5a.large"]
+    #   capacity_type      = "SPOT"
+    #   min_size           = 2
+    #   max_size           = 10
+    #   desired_size       = 2
+    #   labels             = { nodegroup = "green" }
+    #   iam_role_additional_policies = {
+    #     amazonEBS = "arn:aws:iam::aws:policy/service-role/AmazonEBSCSIDriverPolicy"
+    #     amazonEFS = "arn:aws:iam::aws:policy/service-role/AmazonEFSCSIDriverPolicy"
+    #   }
+    # }
   }
 
   cluster_tags = local.common_tags
