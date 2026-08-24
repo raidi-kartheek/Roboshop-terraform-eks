@@ -25,8 +25,9 @@ variable "sg_names" {
         "ingress_alb",
         # Backend ALB
         # "backend_alb",
-        "open_vpn",
+        # "open_vpn",
         "eks_control_plane",
-        "eks_node"
+        "eks_node",
+        "jenkins", "jenkins_agent", "sonar"
     ]
 }
